@@ -11,41 +11,45 @@
   </head>
 
   <body class='d-flex'>
-  <div class="d-flex w-100 h-100 p-3 mx-auto flex-column min-vh-100">
+    <div class="d-flex w-100 h-100 p-3 mx-auto flex-column min-vh-100">
     <header class="mb-auto">
-  <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-      <a href="<%= root_path %>">
-        <%= image_tag('Miaou.png', alt: 'Image def', class: 'img-fluid smaller-image') %>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <% if current_user.present? %>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="<%= admin_orderables_path %>">Tableau de bord</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="<%= edit_user_registration_path %>">Mon profil</a>
-            </li>
-          <% end %>
-          <li class="nav-item d-flex">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a href="<%= root_path %>">
+          <%= image_tag('Miaou.png', alt: 'Image def', class: 'img-fluid smaller-image') %>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
             <% if current_user %>
-              <%= link_to "Logout", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "nav-link" %>
+              <li class="nav-item">
+                <a class="nav-link" href="<%= admin_orderables_path %>">Tableau de bord</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<%= edit_user_registration_path %>">Mon profil</a>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Panier", cart_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "nav-link" %>
+              </li>
             <% else %>
-              <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
-              <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+              <li class="nav-item">
+                <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+              </li>
             <% end %>
-          </li>
-        </ul>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
-  <hr/>
-</header>
-
+    </nav>
+    <hr/>
+  </header>
   
     <main>
     <div class="container">
@@ -55,13 +59,7 @@
       </div>
     </div>
 
-    <script>
-      $(document).ready(function() {
-        $('.alert').delay(30000).fadeOut('slow');
-      });
-    </script>
-
-    <%= render partial: "cart/cart" if @render_cart %>
+    <%= render partial: "cart/cart" if current_user && @cart.orderables.present? %>
     <%= yield %>
     </main> 
 

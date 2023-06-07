@@ -1,6 +1,6 @@
-<%= form_with(model: product) do |form| %>
+<%= form_with(model: product, class: "form", class_with_errors: "has-error") do |form| %>
   <% if product.errors.any? %>
-    <div style="color: red">
+    <div class="alert alert-danger">
       <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
 
       <ul>
@@ -11,22 +11,27 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="form-group">
+    <%= form.label :image_url, "Image URL", class: "form-label" %>
+    <%= form.text_field :image_url, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+  <div class="form-group">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :price, style: "display: block" %>
-    <%= form.text_field :price %>
+  <div class="form-group">
+    <%= form.label :description, class: "form-label" %>
+    <%= form.text_area :description, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.label :price, class: "form-label" %>
+    <%= form.text_field :price, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>
