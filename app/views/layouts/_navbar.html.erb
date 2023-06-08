@@ -36,5 +36,42 @@
             </div>
         </nav>
         <hr class="mb-0"/>
+      <nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a href="<%= root_path %>"><%= image_tag('logo.png', alt: 'Image def', class: 'img-fluid smaller-image', style:'max-width: 150px; max-height: 150px;') %></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav mb-2 justify-content-end">
+        <% if current_user %>
+          <% if current_user.admin? %>
+            <li class="nav-item">
+              <a class="nav-link" href="<%= admin_orderables_path %>">Tableau de bord</a>
+            </li>
+          <% end %>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= user_profile_path(current_user) %>">Mon profil</a>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Panier", view_cart_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "nav-link" %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      <hr class="mb-0"/>
     </header>
 </div>
