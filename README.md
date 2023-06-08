@@ -56,7 +56,7 @@ Ensuite, ouvrez votre navigateur et accédez à l'URL suivante : http://localhos
 
 Lancez ma console:
 
-`$rails console`
+`$ rails console`
 
 `user = User.create!(first_name: "Jojo", last_name: "la frite", is_admin: true, email: "isadmin@admin.com", password: "password", address: "Paris" zipcode: "75000")`
 
