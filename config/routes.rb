@@ -16,8 +16,16 @@ Rails.application.routes.draw do
     root to: "users#index"
   end
 
+  # Routes stripe
+  scope '/checkout' do
+    post 'create', to: 'checkout#create', as: 'checkout_create'
+    get 'success', to: 'checkout#success', as: 'checkout_success'
+    get 'cancel', to: 'checkout#cancel', as: 'checkout_cancel'
+  end
+
   # Route pour afficher le panier
-  get 'cart', to: 'cart#show'
+  get 'cart', to: 'cart#show', as: 'view_cart'
+  get '/carts/:id', to: 'cart#show', as: 'cart'
   
   # Route pour ajouter un produit au panier
   post 'cart/add'
@@ -36,9 +44,4 @@ Rails.application.routes.draw do
 
   # Routes pour l'authentification des utilisateurs
   devise_for :users
-  
-  # Définissez vos routes d'application selon le DSL dans https://guides.rubyonrails.org/routing.html
-
-  # Définit la route du chemin racine ("/")
-  # root "articles#index"
 end
