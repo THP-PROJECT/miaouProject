@@ -1,8 +1,14 @@
 class CartController < ApplicationController
   before_action :initialize_cart
+
+
+  
   def show
     @render_cart = false
   end
+
+
+
 
   def add
     @product = Product.find_by(id: params[:id])
