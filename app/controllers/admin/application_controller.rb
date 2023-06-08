@@ -10,7 +10,6 @@ module Admin
     before_action :check_admin
 
     def authenticate_admin
-      # TODO Add authentication logic here.
     end
 
     def check_admin

@@ -56,6 +56,7 @@ class UserDashboard < Administrate::BaseDashboard
     created_at
     updated_at
   ].freeze
+  
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
@@ -74,6 +75,7 @@ class UserDashboard < Administrate::BaseDashboard
     reset_password_token
     zipcode
   ].freeze
+  
 
   # COLLECTION_FILTERS
   # a hash that defines filters that can be used while searching via the search
