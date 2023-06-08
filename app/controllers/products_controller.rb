@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1 or /products/1.json
   def show
+    
     @carts = Cart.find(params[:cart_id])
   end
 
