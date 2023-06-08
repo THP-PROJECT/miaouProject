@@ -30,7 +30,7 @@ Rails.application.routes.draw do
 
   # Route racine de l'application
   root 'products#index'
-
+  
   # Routes pour le profil utilisateur (show, edit, update)
   resource :user_profile, controller: 'users_profiles', only: [:show]
 
