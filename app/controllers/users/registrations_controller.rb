@@ -10,4 +10,5 @@ class Users::RegistrationsController < Devise::RegistrationsController
     devise_parameter_sanitizer.permit(:account_update, keys: [:avatar])
   end
 
+  MailerNameMailer.sample_email(user_email).deliver_now
 end

@@ -83,3 +83,5 @@ gem "faker", "~> 3.2"
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 end
+
+gem "dotenv-rails", "~> 2.8"
