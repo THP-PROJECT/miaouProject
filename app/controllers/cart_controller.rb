@@ -7,9 +7,6 @@ class CartController < ApplicationController
     @render_cart = false
   end
 
-
-
-
   def add
     @product = Product.find_by(id: params[:id])
     quantity = params[:quantity].to_i
