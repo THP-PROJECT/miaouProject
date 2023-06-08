@@ -27,8 +27,24 @@
         </main> 
       <%= render partial: "layouts/footer"%>
       </div>
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
-    </body>
+
+    </div>
+    <%= yield %>
+    </main> 
+
+    <footer class="mt-auto text-center">
+      <hr />
+      <p>
+        Created with 💙 by
+        <a href="https://github.com/Aureldpz" class="link-footer">Aurélien</a>,
+        <a href="https://github.com/Jakfamily" class="link-footer">Jean-Baptiste</a>,
+        <a href="https://github.com/Rochaya" class="link-footer">Olivier</a>,
+        <a href="https://github.com/williamdore" class="link-footer">William</a>,
+        <a href="https://github.com/mathieustrosberg" class="link-footer">Mathieu Strosberg</a>.
+      </p>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
+  </body>
 </html>
------------------------------------------------------------
+
