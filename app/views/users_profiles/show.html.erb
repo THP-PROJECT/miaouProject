@@ -1,9 +1,70 @@
-<div class="container">
-  <h1 class="mt-5">Profil de l'utilisateur</h1>
-  <p class="mb-3">Nom: <%= current_user.lastname %></p>
-  <p class="mb-3">Prénom: <%= current_user.firstname %></p>
-  <p class="mb-3">Adresse: <%= current_user.address %></p>
-  <p class="mb-3">Code postal: <%= current_user.zipcode %></p>
-
-  <a class="btn btn-primary" href="<%= edit_user_registration_path %>">Modifier les informations</a>
-</div>
+<section class="d-flex flex-column min-vh-100", style="background-color: #f9f4f0;">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card mb-4">
+          <div class="card-body text-center">
+            <img src="https://media.tenor.com/eToqnZhOyLgAAAAj/aa.gif" alt="avatar"
+              class="rounded-circle img-fluid" style="width: 150px;"> <!-- Ajouter avatar-->
+            <h5 class="my-3"><%= current_user.firstname%> <%= current_user.lastname%></h5>
+            <p class="text-muted mb-1">Full Stack Developer (lol)</p>
+            <p class="text-muted mb-4">Miaou city gang (<%= current_user.zipcode %>)</p>
+            <div class="d-flex justify-content-center mb-2">
+              <a class="btn btn-primary" href="<%= edit_user_registration_path %>">Modifier les informations</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Nom</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0"><%= current_user.firstname%> <%= current_user.lastname%></p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Email</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0"><%= current_user.email%></p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Téléphone</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">(097) 234-5678</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Zip Code</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0"><%= current_user.zipcode %></p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Adresse</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0"><%= current_user.address %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
