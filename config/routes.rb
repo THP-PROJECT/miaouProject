@@ -36,11 +36,4 @@ Rails.application.routes.draw do
 
   # Routes pour l'authentification des utilisateurs
   devise_for :users
-
-  
-  # Définissez vos routes d'application selon le DSL dans https://guides.rubyonrails.org/routing.html
-
-  # Définit la route du chemin racine ("/")
-  # root "articles#index"
 end
-

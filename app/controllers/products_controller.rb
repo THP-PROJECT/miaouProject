@@ -8,9 +8,6 @@ class ProductsController < ApplicationController
 
   # GET /products/1 or /products/1.json
   def show
-    @cart = Cart.find(params[:cart_id])
-    @cart = @carts
-
   end
 
   # GET /products/new
