@@ -105,6 +105,10 @@ GEM
     diff-lcs (1.5.0)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     erubi (1.12.0)
     faker (3.2.0)
       i18n (>= 1.8.11, < 2)
@@ -312,6 +316,7 @@ DEPENDENCIES
   capybara
   debug
   devise
+  dotenv-rails (~> 2.8)
   faker (~> 3.2)
   importmap-rails
   jbuilder
@@ -333,4 +338,4 @@ RUBY VERSION
    ruby 3.0.0p0
 
 BUNDLED WITH
-   2.4.12
+   2.4.13
