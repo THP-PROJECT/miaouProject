@@ -1,36 +1,87 @@
-<% @cart.orderables.each do |orderable| %>
-  <% product = orderable.product %>
-  <div id="<%= "cart-#{product.id}" %>" class="mb-4">
-    <div class="row align-items-center">
-      <div class="col">
-        <strong>Name:</strong>
-        <%= product.name %>
-      </div>
-      <div class="col">
-        <strong>Description:</strong>
-        <%= product.description %>
-      </div>
-      <div class="col">
-        <strong>Price:</strong>
-        <%= product.price %>
-      </div>
-      <div class="col">
-        <%= form_with(url: cart_add_path) do |f| %>
-          <%= f.hidden_field :id, value: product.id %>
-          <%= f.number_field :quantity, value: orderable.quantity, min: 0, class: "form-control" %>
-          <%= f.submit "Add To Cart", class: "btn btn-primary" %>
-        <% end %>
-      </div>
-      <div class="col">
-        <%= form_with(url: cart_remove_path) do |f| %>
-          <%= f.hidden_field :id, value: orderable.id %>
-          <%= f.submit "X", class: "btn btn-danger" %>
-        <% end %>
-      </div>
-      <div class="col">
-        <strong>Total:</strong>
-        <%= orderable.total %>
-      </div>
+<div class="bg-white col-lg-8 p-5">
+    <!-- title -->
+    <div class="d-flex justify-content-between align-items-center mb-5">
+        <h1 class="fw-bold mb-0 text-black">Votre panier</h1>
+        <h6 class="mb-0 text-muted"><%= @cart.orderables.count %> <%= 'image'.pluralize(@cart.orderables.count) %></h6>
     </div>
-  </div>
-<% end %>
+    <hr class="my-4">
+
+    <% @cart.orderables.each do |orderable| %>
+        <% product = orderable.product %>
+        <!-- Items -->
+        <div class="row d-flex">
+            <!--image-->
+            <div class="col-2">
+                <img class="img-fluid rounded-3" src="https://i.pinimg.com/originals/59/54/b4/5954b408c66525ad932faa693a647e3f.jpg" style="object-fit: cover;" alt="miaou" />
+            </div>
+
+            <!--item title-->
+            <div class="col-2">
+                <h6 class="text-muted"><%= product.name %></h6>
+            </div>
+
+            <!-- number of item -->
+            <div class="col-4 d-flex">
+              <div class="row">
+                <%= form_with(url: cart_add_path) do |f| %>
+                  <%= f.hidden_field :id, value: product.id %>
+                  <div class="col-4">
+                    <%= f.number_field :quantity, value: orderable.quantity, min: 0, class: "form-control", id: "quantity-field" %>
+                  </div>
+                  <div class="col-8">
+                    <%= f.submit "Modifier la quantité", class: "btn btn-dark", id: "quantity-submit" %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+
+            <!-- price -->
+            <div class="col-2">
+                <h6 class="mb-0"><%= product.price %> €</h6>
+            </div>
+
+            <div class="col-2">
+                <%= form_with(url: cart_remove_path) do |f| %>
+                <%= f.hidden_field :id, value: orderable.id %>
+                <%= f.submit "X", class: "btn btn-danger" %>
+                <% end %>
+            </div>
+
+            <hr class="my-4">
+        </div>
+
+    <% end %>
+
+    <div class="pt-5">
+        <h6 class="mb-0"><a href="<%= products_path %>" class="text-body"><i class="fas fa-long-arrow-alt-left me-2"></i>Back to shop</a></h6>
+    </div>
+</div>
+<div class="col-lg-4 bg-light p-5">
+    <h3 class="fw-bold mb-5 mt-2 pt-1">Résumé</h3>
+    <hr class="my-4">
+
+    <div class="d-flex justify-content-between mb-4">
+        <h5 class="row">SOMME DES ACHATS</h5><br>
+        <h5 class="row"><%= @cart.total %>€</h5>
+    </div>
+
+    <hr class="my-4">
+
+    <h5 class="text-uppercase mb-3">Code de réduction</h5>
+
+    <div class="mb-5">
+        <div class="form-outline">
+            <input type="text" id="code" class="form-control form-control-lg" />
+            <label class="form-label" for="code">Renseignez votre code</label>
+        </div>
+    </div>
+
+    <hr class="my-4">
+
+    <div class="d-flex justify-content-between mb-5">
+        <h5 class="text-uppercase">Total</h5>
+        <h5><%= @cart.total %>€</h5>
+    </div>
+
+    <button type="button" class="btn btn-dark btn-block btn-lg">Valider mon panier</button>
+</div>
