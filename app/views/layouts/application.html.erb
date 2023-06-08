@@ -11,8 +11,9 @@
   </head>
 
   <body class='d-flex'>
-  <div class="d-flex w-100 h-100 p-3 mx-auto flex-column min-vh-100">
+    <div class="d-flex w-100 h-100 p-3 mx-auto flex-column min-vh-100">
     <header class="mb-auto">
+
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
       <a href="<%= root_path %>">
@@ -32,20 +33,34 @@
             </li>
           <% end %>
           <li class="nav-item d-flex">
-            <% if current_user %>
-              <%= link_to "Logout", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "nav-link" %>
-            <% else %>
-              <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
-              <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
-            <% end %>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <hr/>
-</header>
 
+            <% if current_user %>
+              <li class="nav-item">
+                <a class="nav-link" href="<%= admin_orderables_path %>">Tableau de bord</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<%= edit_user_registration_path %>">Mon profil</a>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Panier", cart_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "nav-link" %>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <hr/>
+  </header>
   
     <main>
     <div class="container">
@@ -55,13 +70,7 @@
       </div>
     </div>
 
-    <script>
-      $(document).ready(function() {
-        $('.alert').delay(30000).fadeOut('slow');
-      });
-    </script>
-
-    <%= render partial: "cart/cart" if @render_cart %>
+    <%= render partial: "cart/cart" if current_user && @cart.orderables.present? %>
     <%= yield %>
     </main> 
 

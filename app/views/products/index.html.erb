@@ -1,14 +1,23 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Products</h1>
+<div class="text-center">
+  <h1 class="mb-4">Liste de nos produits</h1>
+</div>
 
 <div id="products">
   <% @products.each do |product| %>
-    <%= render product %>
-    <p>
-      <%= link_to "Show this product", product %>
-    </p>
+    <div class="card mb-3">
+      <div class="card-body">
+        <%= render product %>
+        <p>
+          <%= link_to "Show this product", product, class: "btn btn-primary" %>
+        </p>
+      </div>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New product", new_product_path %>
+<div class="mt-3">
+  <% if current_user&.admin? %>
+    <%= link_to "New product", new_product_path, class: "btn btn-success" %>
+  <% end %>
+</div>
+

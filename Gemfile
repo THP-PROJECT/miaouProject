@@ -77,3 +77,5 @@ gem 'activestorage'
 gem 'administrate'
 gem 'stripe'
 gem 'mailjet'
+
+gem "faker", "~> 3.2"
