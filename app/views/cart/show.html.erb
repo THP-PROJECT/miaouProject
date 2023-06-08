@@ -1,1 +1,1 @@
-<%= render partial: "cart/cart" if current_user %>
+<%= render partial: 'orderables', locals: { cart: @cart } %>
