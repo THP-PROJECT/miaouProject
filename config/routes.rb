@@ -24,6 +24,11 @@ Rails.application.routes.draw do
   end
 
   # Routes pour le panier
+  # Route pour afficher le panier
+  get 'cart', to: 'cart#show', as: 'view_cart'
+  get '/carts/:id', to: 'cart#show', as: 'cart'
+  
+  # Route pour ajouter un produit au panier
   post 'cart/add'
   post 'cart/remove'
   get 'cart', to: 'carts#show', as: 'view_cart'

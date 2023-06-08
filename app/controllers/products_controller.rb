@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
   def show
     @cart = Cart.find(params[:cart_id])
     @cart = @carts
+    @carts = Cart.find(params[:cart_id])
   end
 
   # GET /products/new
