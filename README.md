@@ -18,7 +18,7 @@ Créez une Pull Request dans notre repository principal
 
 ## Authors
 
-# contact
+# Contact
 
 Si vous avez des questions ou des commentaires, n'hésitez pas à nous contacter :
 
