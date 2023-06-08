@@ -1,18 +1,13 @@
-
-<div class="pt-5">
-    <h6 class="mb-0"><a href="<%= root_path %>" class="text-body"><i class="fas fa-long-arrow-alt-left me-2"></i>Back to shop</a></h6>
-</div>
-
 <%= turbo_frame_tag "cart" do %>
 <section class="h-100" style="background-color: #f9f4f0;">
-		<div class="container py-5 h-100">
-			<div class="d-flex h-100 p-0 border rounded bg-white">
-          <% if @cart.orderables.count > 0 %>
-            <%= render "cart/orderables" %>
-          <% else %>
-            <%= render "cart/noorderables" %>
-          <% end %>
-        </div>
-		</div>
-</section>
+    <div class="container py-5 h-100">
+      <div class="d-flex h-100 p-0 border rounded bg-white justify-content-center">
+        <% if @cart.orderables.count > 0 %>
+          <%= render "cart/orderables" %>
+        <% else %>
+          <%= render "cart/noorderables" %>
+        <% end %>
+      </div>
+    </div>
+  </section>
 <% end %>
