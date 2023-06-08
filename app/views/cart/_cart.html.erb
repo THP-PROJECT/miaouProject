@@ -9,3 +9,101 @@
     <% end %>
   </div>
 <% end %>
+
+
+
+
+
+
+
+
+<section class="h-100" style="background-color: #f9f4f0;">
+		<div class="container py-5 h-100">
+			<div class="d-flex justify-content-center align-items-center h-100 p-0 border rounded">
+				<div class="row border-2 rounded">
+					<div class="bg-white col-lg-8 p-5">
+						<!-- title -->
+							<div class="d-flex justify-content-between align-items-center mb-5">
+								<h1 class="fw-bold mb-0 text-black">Votre panier</h1>
+								<h6 class="mb-0 text-muted"><%= @items.count %> images</h6>
+							</div>
+							<hr class="my-4">
+						<% @items.each do |item| %>
+						<!-- Items -->
+							<div class="row mb-4 d-flex justify-content-between align-items-center">
+								<!--image-->
+								<div class="col-md-3 col-lg-3 col-xl-2">
+									<img class="img-fluid rounded-3" src="https://i.pinimg.com/originals/59/54/b4/5954b408c66525ad932faa693a647e3f.jpg" style="object-fit: cover;" alt="miaou" />
+								</div>
+
+								<!--item title-->
+								<div class="col-md-3 col-lg-4 col-xl-2">
+									<h6 class="text-muted"><%= item.title %></h6>
+								</div>
+
+								<!-- number of item -->
+								<div class="col-md-3 col-lg-2 col-xl-2">
+									<button class="btn btn-link px-2"
+										onclick="">
+										<i class="fas fa-minus"></i>
+									</button>
+
+									<input id="form1" min="0" name="quantity" value="1" type="number"
+										class="form-control form-control-sm" />
+
+									<button class="btn btn-link px-2"
+										onclick="">
+										<i class="fas fa-plus"></i>
+									</button>
+								</div>
+
+								<!-- price -->
+								<div class="col-md-3 col-lg-3 col-xl-2 text-end">
+									<h6 class="mb-0"><%= item.price %> €</h6>
+								</div>
+							</div>
+							
+							<hr class="my-4">
+
+						<%end%>
+
+
+						<div class="pt-5">
+							<h6 class="mb-0"><a href="#!" class="text-body"><i class="fas fa-long-arrow-alt-left me-2"></i>Back to shop</a></h6>
+						</div>
+					</div>
+					<div class="col-lg-4 bg-light p-5">
+							<h3 class="fw-bold mb-5 mt-2 pt-1">Résumé</h3>
+							<hr class="my-4">
+
+							<div class="d-flex justify-content-between mb-4">
+								<h5>SOMME DES ACHATS</h5><br>
+								<h5>   €</h5>
+							</div>
+
+							<hr class="my-4">
+
+							<h5 class="text-uppercase mb-3">Code de réduction</h5>
+
+							<div class="mb-5">
+								<div class="form-outline">
+									<input type="text" id="code" class="form-control form-control-lg" />
+									<label class="form-label" for="code">Renseignez votre code</label>
+								</div>
+							</div>
+
+							<hr class="my-4">
+
+							<div class="d-flex justify-content-between mb-5">
+								<h5 class="text-uppercase">Total</h5>
+								<h5>PRIX TOTAL</h5>
+							</div>
+
+							<button type="button" class="btn btn-dark btn-block btn-lg">Valider mon panier</button>
+					</div>
+				</div>
+			</div>
+		</div>
+</section>
+
+-->
