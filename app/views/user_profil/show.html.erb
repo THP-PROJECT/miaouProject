@@ -1,0 +1,10 @@
+<div class="container">
+  <h1 class="mt-5">Profil de l'utilisateur</h1>
+  <p class="mb-3">Nom: <%= @lastname %></p>
+  <p class="mb-3">Prénom: <%= @firstname %></p>
+  <p class="mb-3">Adresse: <%= @address %></p>
+  <p class="mb-3">Code postal: <%= @zipcode %></p>
+
+  
+  <a class="btn btn-primary" href="<%= edit_user_registration_path %>">Modifier les informations</a>
+</div>

@@ -15,18 +15,33 @@ Rails.application.routes.draw do
     # Route racine de l'administration
     root to: "users#index"
   end
+
+  # Route pour afficher le panier
   get 'cart', to: 'cart#show'
+  
+  # Route pour ajouter un produit au panier
   post 'cart/add'
+
+  # Route pour supprimer un produit du panier
   post 'cart/remove'
 
+  # Routes pour la ressource products
   resources :products
-  
-  root 'products#index'
-  
-  resource :user_profile, controller: 'users_profiles', only: [:show, :edit, :update]
-  devise_for :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
+  # Route racine de l'application
+  root 'products#index'
+
+  # Route pour afficher le profil de l'utilisateur
+  get '/profil', to: 'user_profil#show'
+
+  # Routes pour le profil utilisateur (show, edit, update)
+  resource :user_profile, controller: 'users_profiles', only: [:show, :edit, :update]
+
+  # Routes pour l'authentification des utilisateurs
+  devise_for :users
+  
+  # Définissez vos routes d'application selon le DSL dans https://guides.rubyonrails.org/routing.html
+
+  # Définit la route du chemin racine ("/")
   # root "articles#index"
 end
