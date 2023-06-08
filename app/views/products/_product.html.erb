@@ -3,7 +3,7 @@
     <div class="card h-100">
       <a href="#" class="text-reset text-decoration-none" data-bs-toggle="modal" data-bs-target="#productModal<%= product.id %>">
       <% if product.image_url.present? %>
-        <%= image_tag(product.image_url, class: "card-img-top", alt: "Product Image") %>
+        <%= image_tag(product.image_url, class: "card-img-top", alt: "Product Image", style:"height: 300px; object-fit: cover") %>
       <% else %>
         <img class="card-img-top" src="https://i.pinimg.com/originals/59/54/b4/5954b408c66525ad932faa693a647e3f.jpg" style="height: 300px; object-fit: cover;" alt="miaou" />
       <% end %>
