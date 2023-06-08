@@ -5,7 +5,7 @@
 À propos du projet
 Ce projet a été créé avec enthousiasme par Jean-Baptiste Faria, Mathieu Strosberg et William Doré. Notre objectif est de vous offrir une expérience unique en vous proposant une sélection exceptionnelle de photos de chats. Nous croyons fermement que les chats sont une source de réconfort et de bonheur, et nous voulons partager cette joie avec vous à travers nos superbes photographies.
 
-## Contribuer
+# Contribuer
 
 Nous sommes ravis de recevoir des contributions pour améliorer notre site de vente de photos de chat. Si vous souhaitez contribuer, veuillez suivre les étapes suivantes :
 
@@ -15,8 +15,6 @@ Effectuez vos modifications
 Validez vos modifications : git commit -m "Ajouter une nouvelle fonctionnalité"
 Poussez vos modifications vers votre fork : git push origin ma-nouvelle-fonctionnalite
 Créez une Pull Request dans notre repository principal
-
-## Authors
 
 # Contact
 
