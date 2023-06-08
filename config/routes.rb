@@ -16,19 +16,10 @@ Rails.application.routes.draw do
     root to: "users#index"
   end
 
-  # Route pour afficher le panier
   get 'cart', to: 'cart#show'
-  
-  # Route pour ajouter un produit au panier
   post 'cart/add'
   post 'cart/remove'
-  get 'cart', to: 'carts#show', as: 'view_cart'
-
-
-  # Routes pour la ressource products
   resources :products
-
-  # Route racine de l'application
   root 'products#index'
   
   # Routes pour le profil utilisateur (show, edit, update)
