@@ -1,4 +1,4 @@
-![Logo](app/assetts/images/logo.png)
+![Logo](app/assets/images/logo.png)
 
 # Bienvenue sur le site de vente de photos de chat !
 
