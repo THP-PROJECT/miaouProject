@@ -23,15 +23,11 @@ Rails.application.routes.draw do
     get 'cancel', to: 'checkout#cancel', as: 'checkout_cancel'
   end
 
-  # Route pour afficher le panier
-  get 'cart', to: 'carts#show', as: 'view_cart'
-  get '/carts/:id', to: 'cart#show', as: 'cart'
-
-  # Route pour ajouter un produit au panier
+  # Routes pour le panier
   post 'cart/add'
-
-  # Route pour supprimer un produit du panier
   post 'cart/remove'
+  get 'cart', to: 'carts#show', as: 'view_cart'
+
 
   # Routes pour la ressource products
   resources :products
@@ -45,3 +41,4 @@ Rails.application.routes.draw do
   # Routes pour l'authentification des utilisateurs
   devise_for :users
 end
+

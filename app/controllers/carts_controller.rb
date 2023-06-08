@@ -1,10 +1,14 @@
-class CartController < ApplicationController
+class CartsController < ApplicationController
   before_action :initialize_cart
   before_action :authenticate_user! 
 
   
   def show
-    @render_cart = false
+    if params[:id].present?
+      @cart = Cart.find(params[:id])
+    else
+      @cart = Cart.create
+    end
   end
 
   def add
