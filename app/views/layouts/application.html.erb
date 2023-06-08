@@ -12,23 +12,19 @@
   </head>
 
   <body>
-    <div class="d-flex w-100 h-100 mx-auto flex-column min-vh-100">
+    <div class="d-flex w-100 h-100 mx-auto flex-column min-vh-100 ">
       <%= render partial: "layouts/navbar"%>
-        <main>
-        <div class="container">
-          <div class="text-center">
-            <p class="notice"><%= notice %></p>
-            <p class="alert"><%= alert %></p>
-          </div>
-        </div>
-        <%= yield %>
+        <main class="content">
+            <div class="container">
+              <div class="text-center">
+                <p class="notice"><%= notice %></p>
+                <p class="alert"><%= alert %></p>
+              </div>
+            </div>
+          <%= yield %>
         </main> 
       <%= render partial: "layouts/footer"%>
-      </div>
-
     </div>
-    <%= yield %>
-    </main> 
 
     <footer class="mt-auto text-center">
       <hr />
