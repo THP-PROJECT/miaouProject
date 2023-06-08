@@ -1,1 +1,15 @@
-<%= yield %>
+Merci pour votre commande !
+
+Nous tenons à vous remercier d'avoir effectué un achat sur notre boutique. Voici le récapitulatif de votre commande :
+
+Produits achetés :
+<% @products.each do |product| %>
+  - <%= product.name %>
+    Prix : <%= product.price %> €
+    Quantité : <%= product.quantity %> unités
+<% end %>
+
+Merci encore d'avoir choisi notre boutique. Si vous avez des questions ou avez besoin d'une assistance supplémentaire, n'hésitez pas à nous contacter.
+
+Cordialement,
+Votre équipe de la boutique

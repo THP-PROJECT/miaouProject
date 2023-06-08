@@ -15,7 +15,6 @@ Rails.application.routes.draw do
     # Route racine de l'administration
     root to: "users#index"
   end
-
   get 'cart', to: 'cart#show'
   post 'cart/add'
   post 'cart/remove'
