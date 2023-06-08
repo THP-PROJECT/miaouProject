@@ -20,10 +20,10 @@ Créez une Pull Request dans notre repository principal
 
 Si vous avez des questions ou des commentaires, n'hésitez pas à nous contacter :
 
-- [@jean-baptiste](https://www.github.com/Jakfamily)
-- [@mathieu](https://www.github.com/mathieustroberg)
-- [@william](https://www.github.com/williamdore)
-- [@olivier](https://www.github.com/Rochaya)
+- [@Jean-baptiste](https://www.github.com/Jakfamily)
+- [@Mathieu](https://www.github.com/mathieustroberg)
+- [@William](https://www.github.com/williamdore)
+- [@Olivier](https://www.github.com/Rochaya)
 
 # Installation
 
@@ -56,7 +56,7 @@ Lancez ma console:
 
 `$ rails console`
 
-`user = User.create!(firstname: "Jojo", lastname: "la frite", is_admin: true, email: "isadmin@admin.com", password: "password", address: "Paris" zipcode: "75000")`
+`user = User.create!(firstname: "Jojo", lastname: "la frite", is_admin: true, email: "isadmin@admin.com", password: "password", address: "Paris", zipcode: "75000")`
 
 `user.save`
 
