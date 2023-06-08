@@ -28,7 +28,7 @@
                   <a class="nav-link" href="<%= admin_orderables_path %>">Tableau de bord</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/profil">Mon profil</a>
+                  <a class="nav-link" href="<%= user_profile_path(current_user) %>">Mon profil</a>
                 </li>
                 <li class="nav-item">
                   <%= link_to "Panier", cart_path, class: "nav-link" %>
