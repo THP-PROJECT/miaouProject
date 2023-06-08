@@ -1,11 +1,13 @@
 <%= turbo_frame_tag "cart" do %>
-  <div class="container">
-    <h1 class="mb-4">Panier</h1>
-    <% if @cart.orderables.count > 0 %>
-      <%= render "cart/orderables" %>
-      <p class="mb-4">Total: <%= @cart.total %></p>
-    <% else %>
-      <p class="mb-4">Votre panier est vide</p>
-    <% end %>
-  </div>
+<section class="h-100" style="background-color: #f9f4f0;">
+		<div class="container py-5 h-100">
+			<div class="d-flex h-100 p-0 border rounded bg-white">
+          <% if @cart.orderables.count > 0 %>
+            <%= render "cart/orderables" %>
+          <% else %>
+            <%= render "cart/noorderables" %>
+          <% end %>
+        </div>
+		</div>
+</section>
 <% end %>

@@ -26,7 +26,6 @@
               <% end %>
             </div>
           </div>
-        <%= render partial: "cart/cart" if current_user && @cart.orderables.present? %>
         <%= yield %>
         </main> 
       <%= render partial: "layouts/footer"%>
