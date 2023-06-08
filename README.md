@@ -48,7 +48,7 @@ Assurez-vous d'avoir Ruby et Ruby on Rails installés sur votre machine. Ensuite
 Démarrage du serveur
 Une fois les dépendances installées et la base de données configurée, vous pouvez démarrer le serveur Rails en utilisant la commande suivante :
 
-`rails server `
+`$ rails server `
 
 Ensuite, ouvrez votre navigateur et accédez à l'URL suivante : http://localhost:3000
 
