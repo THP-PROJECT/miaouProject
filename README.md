@@ -1,11 +1,11 @@
-![Logo](app/assetts/images/logo.png)
+![Logo](app/assets/images/logo.png)
 
 # Bienvenue sur le site de vente de photos de chat !
 
 À propos du projet
 Ce projet a été créé avec enthousiasme par Jean-Baptiste Faria, Mathieu Strosberg et William Doré. Notre objectif est de vous offrir une expérience unique en vous proposant une sélection exceptionnelle de photos de chats. Nous croyons fermement que les chats sont une source de réconfort et de bonheur, et nous voulons partager cette joie avec vous à travers nos superbes photographies.
 
-## Contribuer
+# Contribuer
 
 Nous sommes ravis de recevoir des contributions pour améliorer notre site de vente de photos de chat. Si vous souhaitez contribuer, veuillez suivre les étapes suivantes :
 
@@ -16,9 +16,7 @@ Validez vos modifications : git commit -m "Ajouter une nouvelle fonctionnalité"
 Poussez vos modifications vers votre fork : git push origin ma-nouvelle-fonctionnalite
 Créez une Pull Request dans notre repository principal
 
-## Authors
-
-# contact
+# Contact
 
 Si vous avez des questions ou des commentaires, n'hésitez pas à nous contacter :
 
@@ -48,7 +46,7 @@ Assurez-vous d'avoir Ruby et Ruby on Rails installés sur votre machine. Ensuite
 Démarrage du serveur
 Une fois les dépendances installées et la base de données configurée, vous pouvez démarrer le serveur Rails en utilisant la commande suivante :
 
-`rails server `
+`$ rails server `
 
 Ensuite, ouvrez votre navigateur et accédez à l'URL suivante : http://localhost:3000
 
@@ -56,7 +54,7 @@ Ensuite, ouvrez votre navigateur et accédez à l'URL suivante : http://localhos
 
 Lancez ma console:
 
-`$rails console`
+`$ rails console`
 
 `user = User.create!(firstname: "Jojo", lastname: "la frite", is_admin: true, email: "isadmin@admin.com", password: "password", address: "Paris" zipcode: "75000")`
 
