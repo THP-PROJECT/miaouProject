@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   root 'products#index'
   
   # Routes pour le profil utilisateur (show, edit, update)
-  resource :user_profile, controller: 'users_profiles', only: [:show, :edit, :update]
+  resource :user_profile, controller: 'users_profiles', only: [:show]
 
   # Routes pour l'authentification des utilisateurs
   devise_for :users

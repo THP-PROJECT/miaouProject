@@ -1,2 +1,9 @@
-<h1>UsersProfiles#show</h1>
-<p>Find me in app/views/users_profiles/show.html.erb</p>
+<div class="container">
+  <h1 class="mt-5">Profil de l'utilisateur</h1>
+  <p class="mb-3">Nom: <%= current_user.lastname %></p>
+  <p class="mb-3">Prénom: <%= current_user.firstname %></p>
+  <p class="mb-3">Adresse: <%= current_user.address %></p>
+  <p class="mb-3">Code postal: <%= current_user.zipcode %></p>
+
+  <a class="btn btn-primary" href="<%= edit_user_registration_path %>">Modifier les informations</a>
+</div>
