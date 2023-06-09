@@ -2,9 +2,7 @@ class CartController < ApplicationController
   before_action :initialize_cart
   before_action :authenticate_user! 
 
-  MailerNameMailer.order_confirmation_email(@user,@cart).deliver_now
-  MailerNameMailer.admin_notification_email(@user,@cart).deliver_now
-
+  
   def show
     @orderables = @cart.orderables
   end
